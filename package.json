@@ -1,0 +1,48 @@
+{
+  "name": "assignment-b2-realtime-web-application",
+  "version": "1.0.0",
+  "description": "assignment-b2-realtime-web-application",
+  "main": "src/server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node src/server.js",
+    "start:dev": "nodemon dotenv src/server.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "npx eslint ./src || exit 0",
+    "lint:fix": "npx eslint ./src --fix || exit 0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@gitlab.lnu.se:1dv026/student/kb223aw/assignment-b2-realtime-web-application.git"
+  },
+  "author": "Kaj Berg",
+  "contributors": [
+    "Kaj Berg <kb223aw@student.lnu.se>"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^0.21.1",
+    "bcrypt": "^5.0.1",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-hbs": "^2.3.4",
+    "express-session": "^1.17.1",
+    "helmet": "^4.4.1",
+    "mongoose": "^5.11.12",
+    "morgan": "^1.10.0",
+    "node-fetch": "^2.6.1",
+    "socket.io": "^3.1.0"
+  },
+  "eslintConfig": {
+    "extends": "@lnu"
+  },
+  "devDependencies": {
+    "@lnu/eslint-config": "^1.1.2",
+    "eslint": "^7.18.0",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-jsdoc": "^31.0.7",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "nodemon": "^2.0.7"
+  }
+}

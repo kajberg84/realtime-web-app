@@ -1,0 +1,30 @@
+<!-- views/issues/edit.hbs -->
+
+<div class="jumbotron">
+  <div class="container">
+    <h1>Create a new issue</h1>
+  </div>
+<p>
+<div class=""><a href="./" class="btn btn-secondary btn-lg btn-sm" role="button" aria-disabled="true">Back</a></div>
+</p>
+<hr>
+
+
+<div>
+  <form method="POST" action="./create">
+  <!-- title -->
+    <label for="title"><b>Title: </b></label><br>
+    <input name="title" type="text" placeholder="Title here">
+</div>
+
+<!-- Description -->
+<div>
+  <label for="description"><b>Description: </b></label><br>
+  <textarea name="description" type="text" placeholder="Description here" rows="4" cols="20"
+    wrap="hard"></textarea>
+</div>
+<hr>
+
+<button class="btn btn-secondary btn-lg btn-sm" type="submit">Save Changes</button>
+</form>
+</div>

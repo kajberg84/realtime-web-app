@@ -1,0 +1,13 @@
+{
+  "name" : "issuesapp:5005",
+  "script" : "src/server.js",
+  "env_production" : {
+    "NODE_ENV": "production",
+    "MY_PORT": "5004",
+    "BASE_URL": "/issues-app/",
+    "SESSION_NAME": "666ilovecows666",
+    "SESSION_SECRET": "xxxTHISistheWAYxxx",
+    "GITLAB_ACCESS_TOKEN": "DCgVCqFk5M7pP11af8XE",
+    "GITLAB_ISSUES": "https://gitlab.lnu.se/api/v4/projects/13482/issues"
+  }
+}

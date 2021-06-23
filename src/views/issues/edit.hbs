@@ -1,0 +1,34 @@
+<!-- views/issues/edit.hbs -->
+
+<div class="jumbotron">
+  <div class="container">
+    <h1>Edit Issue</h1>
+  </div>
+<p>
+<div class=""><a href="./" class="btn btn-secondary btn-lg btn-sm" role="button" aria-disabled="true">Back</a></div>
+</p>
+
+    <ul class="list-group">
+      <li class="list-group-item"><b>Title: </b> {{viewData.title}}</li>
+      <li class="list-group-item"><b>Description: </b>{{viewData.description}}</li>
+      <li class="list-group-item"><b>Author: </b>{{viewData.author.name}}  <img src="{{viewData.author.avatar_url}}"  width="20px" height="20px" alt="avatar of issue"></li>
+    </ul>
+    
+<!-- title -->
+<div>
+  <form method="POST" action="./{{viewData.id}}/edit">
+    <label for="title"><b>Title: </b></label><br>
+    <input name="title" type="text" value="{{viewData.title}}" placeholder="Title here">
+</div>
+
+<!-- Description -->
+<div>
+  <label for="description"><b>Description: </b></label><br>
+  <textarea name="description" type="text" placeholder="Description here" rows="4" cols="20"
+    wrap="hard">{{viewData.description}}</textarea>
+</div>
+<hr>
+
+<button class="btn btn-secondary btn-lg btn-sm" type="submit">Save Changes</button>
+</form>
+</div>

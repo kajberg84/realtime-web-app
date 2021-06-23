@@ -1,0 +1,57 @@
+<div class="jumbotron">
+  <div class="container">
+    <h1>All Issues</h1>
+  </div>
+  {{#if viewData.length}}
+    <div id="all-issues">
+    {{#each viewData}}
+      <div class="issue issue-{{this.iid}}">
+                <ul class="list-group">
+                  <li class="list-group-item"><b>Title: </b>{{this.title}}</li>
+                  <li class="list-group-item"><b>Description: </b>{{this.description}}</li>
+                  <li class="list-group-item"><b>Author: </b>{{this.author.name}} <img src="{{this.author.avatar_url}}"  width="20px" height="20px" alt="avatar of issue"></li>                
+                  <li class="list-group-item"><b>Updated: </b> {{this.updatedAt}}. Created: {{this.createdAt}}</li>
+                  <li class="list-group-item"><a href="./{{this.iid}}/edit" class="btn btn-secondary btn-lg btn-sm" role="button" aria-disabled="true">Edit Issue</a></li>
+                  <li class="list-group-item">
+                    <form action="./state" method="POST">
+                      <input type="hidden" name="iid" value="{{this.iid}}">
+                      <input type="hidden" name="state" value="{{this.toggleState}}">
+                      <button type="submit" class="btn btn-lg btn-sm btn-{{#if this.closed}}success{{else}}danger{{/if}}">
+                        {{this.stateEvent}} Issue
+                      </button>
+                    </form>
+                  </li>
+                </ul>
+                <hr>
+      </div>
+    {{/each}}
+    </div>
+      {{else}}
+      <tr>
+        <td>
+          No Issues to display.
+        </td>
+      </tr>
+  {{/if}}
+</div>
+
+<template id="issue-template">
+<div class="issue issue-\{{this.iid}}">
+  <ul class="list-group">
+    <li class="list-group-item"><b>Title: </b>\{{this.title}}</li>
+    <li class="list-group-item"><b>Description: </b>\{{this.description}}</li>
+    <li class="list-group-item"><b>Author: </b>\{{this.author.name}} </li>                
+    <li class="list-group-item"><b>Updated: </b> \{{this.updatedAt}}. Created: \{{this.createdAt}}</li>
+    <li class="list-group-item"><a href="./edit/\{{this.iid}}" class="btn btn-secondary btn-lg btn-sm" role="button" aria-disabled="true">Edit Issue</a></li>
+    <li class="list-group-item">
+      <form action="./state" method="POST">
+        <input type="hidden" name="iid" value="\{{this.iid}}">
+        <input type="hidden" name="state" value="\{{this.toggleState}}">
+        <button type="submit" class="btn btn-lg btn-sm btn-\{{#if this.closed}}danger\{{else}}success\{{/if}}">
+          \{{this.stateEvent}} Issue
+        </button>
+      </form>
+    </li>
+  </ul>
+</div>
+</template>
